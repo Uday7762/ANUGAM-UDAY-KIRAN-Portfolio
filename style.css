@@ -1362,6 +1362,11 @@ section {
 }
 
 /* ================= Projects ================= */
+.projects.section {
+  overflow-y: auto;
+  justify-content: flex-start;
+}
+
 .projects .section-inner {
   min-height: 200vh;
 }
@@ -1593,7 +1598,7 @@ section {
 .contact .section-inner {
   max-width: 700px;
   padding: 0 20px;
-  min-height: 150vh;
+  min-height: 180vh;
 }
 
 .contact-form-wrap {
@@ -2302,6 +2307,7 @@ section {
     padding: 60px 16px 0;
     height: auto;
     min-height: 100vh;
+    overflow-y: auto;
   }
 
   .projects .section-inner {
