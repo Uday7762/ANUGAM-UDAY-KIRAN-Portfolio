@@ -1363,7 +1363,7 @@ section {
 
 /* ================= Projects ================= */
 .projects .section-inner {
-  min-height: 150vh;
+  min-height: 200vh;
 }
 
 .cards {
@@ -2154,6 +2154,8 @@ section {
   .education.section {
     padding: 60px 16px 0;
     height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
   }
 
   .education .section-inner {
@@ -2161,10 +2163,20 @@ section {
     padding: 0 10px;
   }
 
+  .center-title {
+    font-size: 28px;
+    margin: 20px 0 30px 0;
+    font-weight: 900;
+    color: var(--blue);
+  }
+
   .timeline {
-    padding: 40px 0 60px;
+    padding: 20px 0 80px;
     max-width: 100%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
   .timeline-line {
@@ -2175,12 +2187,13 @@ section {
     position: relative;
     width: 100%;
     height: auto;
-    margin: 20px 0;
+    margin: 40px 0;
     display: flex;
     flex-direction: column;
+    padding: 20px 0;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
+    justify-content: flex-start;
+    gap: 16px;
   }
 
   .timeline-item.left,
@@ -2192,24 +2205,26 @@ section {
   .timeline-dot {
     position: relative;
     transform: none;
-    margin-bottom: 0;
+    margin-bottom: 12px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
     width: 50px;
     height: 50px;
     font-size: 20px;
     flex-shrink: 0;
+    order: 1;
   }
 
   .timeline-date {
     position: relative !important;
-    margin: 0;
+    margin: 0 0 12px 0;
     text-align: center;
-    font-size: 12px !important;
+    font-size: 14px !important;
     opacity: 1 !important;
     transform: none !important;
-    color: rgba(255, 255, 255, 0.7) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
     font-weight: 900;
     width: 100%;
+    order: -1;
   }
 
   .timeline-card {
@@ -2221,11 +2236,12 @@ section {
     left: auto !important;
     right: auto !important;
     transform: translateY(20px) !important;
-    margin: 8px auto 0;
+    margin: 12px auto 0;
     border-radius: 12px;
     opacity: 0;
     display: block;
     transition: all 0.6s ease;
+    order: 2;
   }
 
   .timeline-card h3 {
@@ -2279,6 +2295,52 @@ section {
   .timeline-item.show .timeline-date {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  /* ================= MOBILE PROJECTS SECTION FIX ================= */
+  .projects.section {
+    padding: 60px 16px 0;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .projects .section-inner {
+    height: auto;
+    padding: 0 10px;
+  }
+
+  .projects .center-title {
+    font-size: 28px;
+    margin: 20px 0 30px 0;
+    font-weight: 900;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 40px 0;
+  }
+
+  .card {
+    min-height: 320px;
+    padding: 20px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .github-link {
+    font-size: 13px;
   }
 
   /* ================= MOBILE CERTIFICATIONS SECTION FIX ================= */
