@@ -229,7 +229,7 @@ section {
   max-width: 1400px;
   display: flex;
   flex-direction: column;
-  min-height: 140vh;
+  min-height: 150vh;
 }
 .section-inner.narrow {
   max-width: 760px;
@@ -519,7 +519,8 @@ section {
 }
 
 .about .section-inner {
-  height: auto;
+  min-height: 130vh;
+  overflow-y: auto;
 }
 .about-card-white {
   background: #f4f7ff;
@@ -2105,6 +2106,9 @@ section {
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease 0.2s;
   }
 
   .exp-badge span:first-child {
@@ -2121,6 +2125,9 @@ section {
     width: 100%;
     padding: 18px 16px;
     font-size: 13px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease 0.4s;
   }
 
   .exp-details h3 {
@@ -2140,7 +2147,7 @@ section {
   .exp-item.show .exp-badge,
   .exp-item.show .exp-details {
     opacity: 1;
-    transform: none !important;
+    transform: translateY(0);
   }
 
   /* ================= MOBILE EDUCATION SECTION FIX ================= */
@@ -2213,11 +2220,12 @@ section {
     top: auto !important;
     left: auto !important;
     right: auto !important;
-    transform: none !important;
+    transform: translateY(20px) !important;
     margin: 8px auto 0;
     border-radius: 12px;
-    opacity: 1 !important;
+    opacity: 0;
     display: block;
+    transition: all 0.6s ease;
   }
 
   .timeline-card h3 {
@@ -2265,7 +2273,7 @@ section {
 
   .timeline-item.show .timeline-card {
     opacity: 1 !important;
-    transform: none !important;
+    transform: translateY(0) !important;
   }
 
   .timeline-item.show .timeline-date {
@@ -2277,6 +2285,7 @@ section {
   .certifications.section {
     padding: 60px 16px 0;
     height: auto;
+    overflow-y: auto;
   }
 
   .certifications .section-inner {
@@ -2287,6 +2296,7 @@ section {
   .cert-container {
     height: auto;
     gap: 20px;
+    max-width: 100%;
   }
 
   .cert-instruction {
@@ -2295,13 +2305,14 @@ section {
   }
 
   .cert-logos {
-    height: 180px;
+    height: 160px;
     padding: 0 8px;
     margin: 12px auto;
+    width: 100%;
   }
 
   .cert-track {
-    gap: 20px;
+    gap: 18px;
     animation: certLogosScroll 10s linear infinite;
   }
 
@@ -2316,18 +2327,20 @@ section {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 14px;
+    animation: none;
   }
 
   .logo-btn {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
     gap: 6px;
+    flex-shrink: 0;
   }
 
   .logo-btn img {
-    height: 60px;
-    width: 60px;
+    height: 55px;
+    width: 55px;
   }
 
   .logo-label {
@@ -2335,37 +2348,46 @@ section {
   }
 
   .cert-container.selected .logo-btn {
-    width: 100px;
-    height: 100px;
+    width: 95px;
+    height: 95px;
   }
 
   .cert-container.selected .logo-btn img {
-    height: 50px;
-    width: 50px;
+    height: 48px;
+    width: 48px;
   }
 
   .cert-box {
     max-width: 100%;
-    padding: 14px 12px;
+    padding: 16px 14px;
     margin: 0 auto;
     border-radius: 12px;
+    width: 100%;
   }
 
   .cert-container.selected .cert-box {
     max-width: 100%;
-    max-height: none;
-    padding: 16px 12px;
+    height: auto;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 18px 14px;
+    margin: 12px 0 0 0;
   }
 
   .cert-title {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: 900;
   }
 
   .cert-list {
-    font-size: 13px;
-    line-height: 1.7;
+    font-size: 12px;
+    line-height: 1.6;
     padding-left: 16px;
+  }
+
+  .cert-list li {
+    margin-bottom: 4px;
   }
 }
 
