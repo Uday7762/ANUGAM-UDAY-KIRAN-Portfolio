@@ -34,7 +34,24 @@ function goToSection(id) {
   el.scrollTop = 0;
   window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
+  // Trigger animations for visible elements in the newly shown section
+  setTimeout(() => {
+    triggerVisibleAnimations(el);
+  }, 50);
+
   setActiveSection(id);
+}
+
+function triggerVisibleAnimations(section) {
+  // Add .show class to all reveal, exp-item, and timeline items in the section
+  // so they animate in when they come into view as you scroll
+  const revealElements = section.querySelectorAll(".reveal-up, .reveal-corner");
+  const expItems = section.querySelectorAll(".exp-item");
+  const timelineItems = section.querySelectorAll(".timeline-item");
+
+  revealElements.forEach((el) => el.classList.add("show"));
+  expItems.forEach((el) => el.classList.add("show"));
+  timelineItems.forEach((el) => el.classList.add("show"));
 }
 
 // Menu click scroll
