@@ -97,45 +97,50 @@ scrollTargets.forEach((el) => {
 });
 
 // ================= Reveal animations =================
-const revealUp = document.querySelectorAll(".reveal-up");
-const revealCorner = document.querySelectorAll(".reveal-corner");
-const expItems = document.querySelectorAll(".exp-item");
-const eduTimeline = document.querySelector(".timeline.edu");
-const timelineItems = eduTimeline
-  ? eduTimeline.querySelectorAll(".timeline-item")
-  : [];
+function setupSectionObservers(section) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add("show");
+      });
+    },
+    { threshold: 0.22, root: section },
+  );
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) e.target.classList.add("show");
-    });
-  },
-  { threshold: 0.22 },
-);
+  const expObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add("show");
+      });
+    },
+    { threshold: 0.3, root: section },
+  );
 
-const expObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) e.target.classList.add("show");
-    });
-  },
-  { threshold: 0.3 },
-);
+  const timelineObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add("show");
+      });
+    },
+    { threshold: 0.25, root: section },
+  );
 
-const timelineObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) e.target.classList.add("show");
-    });
-  },
-  { threshold: 0.25 },
-);
+  const revealUp = section.querySelectorAll(".reveal-up");
+  const revealCorner = section.querySelectorAll(".reveal-corner");
+  const expItems = section.querySelectorAll(".exp-item");
+  const eduTimeline = section.querySelector(".timeline.edu");
+  const timelineItems = eduTimeline
+    ? eduTimeline.querySelectorAll(".timeline-item")
+    : [];
 
-revealUp.forEach((el) => revealObserver.observe(el));
-revealCorner.forEach((el) => revealObserver.observe(el));
-expItems.forEach((el) => expObserver.observe(el));
-timelineItems.forEach((el) => timelineObserver.observe(el));
+  revealUp.forEach((el) => revealObserver.observe(el));
+  revealCorner.forEach((el) => revealObserver.observe(el));
+  expItems.forEach((el) => expObserver.observe(el));
+  timelineItems.forEach((el) => timelineObserver.observe(el));
+}
+
+const allSections = document.querySelectorAll(".section");
+allSections.forEach((section) => setupSectionObservers(section));
 
 // ================= Certifications: click logo -> show modal with images =================
 const allLogoButtons = document.querySelectorAll(".logo-btn");

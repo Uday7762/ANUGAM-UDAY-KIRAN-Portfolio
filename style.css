@@ -1839,6 +1839,29 @@ section {
 
 /* ================= Responsive ================= */
 @media (max-width: 980px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow: auto;
+  }
+
+  body {
+    overflow-x: hidden;
+    overscroll-behavior-y: auto;
+  }
+
+  .section {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .section-inner {
+    min-height: 0;
+  }
+
   .about-card-white {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -1947,7 +1970,7 @@ section {
   body {
     height: auto;
     min-height: 100%;
-    overflow-y: auto;
+    overflow: auto;
   }
 
   body {
@@ -1957,7 +1980,8 @@ section {
   .section {
     height: auto;
     min-height: 100vh;
-    overflow: visible;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .section-inner {
@@ -2106,7 +2130,8 @@ section {
   .experience.section {
     padding: 60px 16px 40px;
     min-height: 100vh;
-    overflow: visible;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .experience .section-inner {
@@ -2185,7 +2210,8 @@ section {
     padding: 60px 16px 40px;
     height: auto;
     min-height: 100vh;
-    overflow: visible;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .education .section-inner {
@@ -2332,7 +2358,8 @@ section {
     padding: 60px 16px 40px;
     height: auto;
     min-height: 100vh;
-    overflow: visible;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .projects .section-inner {
