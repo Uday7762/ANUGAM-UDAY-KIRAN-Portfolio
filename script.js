@@ -30,8 +30,9 @@ function goToSection(id) {
   // Show the target section
   el.style.display = "flex";
 
-  // Scroll the section to top
+  // Reset scroll to the top for the newly shown section
   el.scrollTop = 0;
+  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
   setActiveSection(id);
 }

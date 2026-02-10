@@ -1943,6 +1943,27 @@ section {
 }
 
 @media (max-width: 780px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow-y: auto;
+  }
+
+  body {
+    overscroll-behavior-y: auto;
+  }
+
+  .section {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .section-inner {
+    min-height: 0;
+  }
+
   .nav-menu {
     display: none;
   }
@@ -2020,11 +2041,13 @@ section {
 
   /* ================= MOBILE ABOUT SECTION FIX ================= */
   .about.section {
-    padding: 60px 16px 0;
+    padding: 60px 16px 40px;
+    min-height: 110vh;
   }
 
   .about .section-inner {
     height: auto;
+    min-height: 110vh;
     padding: 0 10px;
   }
 
@@ -2081,7 +2104,9 @@ section {
 
   /* ================= MOBILE EXPERIENCE SECTION FIX ================= */
   .experience.section {
-    padding: 60px 16px 0;
+    padding: 60px 16px 40px;
+    min-height: 100vh;
+    overflow: visible;
   }
 
   .experience .section-inner {
@@ -2157,10 +2182,10 @@ section {
 
   /* ================= MOBILE EDUCATION SECTION FIX ================= */
   .education.section {
-    padding: 60px 16px 0;
+    padding: 60px 16px 40px;
     height: auto;
     min-height: 100vh;
-    overflow-y: auto;
+    overflow: visible;
   }
 
   .education .section-inner {
@@ -2304,10 +2329,10 @@ section {
 
   /* ================= MOBILE PROJECTS SECTION FIX ================= */
   .projects.section {
-    padding: 60px 16px 0;
+    padding: 60px 16px 40px;
     height: auto;
     min-height: 100vh;
-    overflow-y: auto;
+    overflow: visible;
   }
 
   .projects .section-inner {
