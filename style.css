@@ -2262,12 +2262,16 @@ section {
     position: relative !important;
     margin: 0 0 12px 0;
     text-align: center;
-    font-size: 14px !important;
+    font-size: 13px !important;
     opacity: 1 !important;
     transform: none !important;
     color: rgba(255, 255, 255, 0.85) !important;
     font-weight: 900;
     width: 100%;
+    max-width: 90vw;
+    padding: 0 8px;
+    word-wrap: break-word;
+    white-space: normal;
     order: -1;
   }
 
